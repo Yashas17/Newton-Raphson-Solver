@@ -60,10 +60,9 @@ The user can view his equation.
 
 `The polynomial is: 1x^2 + -1x^1 + -1x^0 `
 
-Now the _polySolve_ function will run. It will take the differentiated equation from _polyDiff_ and utilize both the equations and the preceding solution to generate a new solution. The solution with respect to this equation. 
+Now the _polySolve_ function will run. It will take the differentiated equation from _polyDiff_ and utilize both the equations and the preceding solution to generate the next solution as per this equation. 
 
-![alt text](https://images-na.ssl-images-amazon.com/images/S/pv-target-images/0eda3ff22f680d1e500a4a7bb5367a915e1e6404ac4c6cd547be070ae57a2b9a._SX1080_.jpg)
-
+![alt text](https://web.mit.edu/10.001/Web/Course_Notes/NLAE/equation6.gif)
 
 It will continue to iterate until the maximum number of iterations is reached or the difference between two consecutive solutions falls below the user-specified tolerance. 
 
