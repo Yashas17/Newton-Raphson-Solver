@@ -1,7 +1,7 @@
 # Newton Raphson Solver (Group Z)
 Project : Newton-Raphson Solver
 
-Simple overview of use/purpose : Newton-Raphson is one of the most widely used numerical methods for solving equations. Here, in this sprint we focus on solving polynomial equations by implementing the newton-raphson algorithm. 
+Simple overview of use/purpose : Newton-Raphson[https://en.wikipedia.org/wiki/Newton%27s_method] is one of the most widely used numerical methods for solving equations. Here, in this sprint we focus on solving polynomial equations by implementing the newton-raphson algorithm. 
 
 Description
 Upon running the program, the user is asked to put the tolerance value : the minimum difference between two successive solutions, maximum number of iterations, so that the program doesn't run infinitely, and an initial guess solution.
