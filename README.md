@@ -31,9 +31,30 @@ The first prompt will be to enter a tolerance value, here the user can enter the
 `Enter the tolerance:1e-4`
 
 The next prompt is to enter the maximum the number of iterations allowed
+
+`Enter maximum number of iterations:100`
+
 The next prompt is to enter a guess solution. Here the user can enter any numerical value.
+
+`Enter guess solution:1`
+
 The next prompt is the number of terms in the equation. Here the user can enter any natural number.
-Depending upon the number of terms, the user will be asked to enter the power and coefficient of each term. For eg if the user wants to enter equation - 'x^2-x-1'. It will done as follows. The user can view his equation.  
+
+`Enter the number of terms in the polynomial equation: 3`
+
+Depending upon the number of terms, the user will be asked to enter the power and coefficient of each term. For eg. if the user wants to enter equation - 'x^2-x-1'. It will done as follows. 
+
+`Enter the power of term 1:      2`
+`Enter coefficient of term 1:    1`
+`Enter the power of term 2:      1`
+`Enter coefficient of term 2:    -1`
+`Enter the power of term 3:      0`
+`Enter coefficient of term 3:    -1`
+
+The user can view his equation.  
+
+`The polynomial is: 1x^2 + -1x^1 + -1x^0 `
+
 Now the polySolve function will run. It will take the differentiated equation from polyDiff and utilize both the equations and the preceding solution to generate a new solution. The solution with respect to this equation. 
 It will continue to iterate until the maximum number of iterations is reached or the difference between two consecutive solutions falls below the user-specified tolerance. 
 After the iterations are complete, it will present the solution, res, and the actual number of iterations taken to reach said solution. 
