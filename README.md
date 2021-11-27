@@ -23,6 +23,7 @@ Then depending upon the number of terms of in the equation, the equation is gene
 - Type "cmake --build ."
 
 This will generate a Newton-Raphson Solver
+
 **Executing program:**
 The first prompt will be to enter a tolerance value, here the user can enter the value as '1e-X' or '0.xxxx1' as per his/her convinience. For eg, for a the tolerance value - '0.0001', the user can enter '1e-4' or '0.0001'.
 The next prompt is to enter the maximum the number of iterations allowed
@@ -32,31 +33,12 @@ Depending upon the number of terms, the user will be asked to enter the power an
 Now the polySolve function will run. It will take the differentiated equation from polyDiff and utilize both the equations and the preceding solution to generate a new solution. The solution with respect to this equation. 
 It will continue to iterate until the maximum number of iterations is reached or the difference between two consecutive solutions falls below the user-specified tolerance. 
 After the iterations are complete, it will present the solution, res, and the actual number of iterations taken to reach said solution. 
-Help
+
+**Help**
+
 Upon entering 'zero' as your guess solution or any value that makes the differentiated function 'zero' or extremely small value the second term in the algorithm will approach infinity leading to a non-numerical solution. In this case, re-run the code with a different guess solution
-Any advise for common problems or issues.
 
-command to run if program contains helper info
-Authors
-Contributors names and contact info
+**Authors**
 
-ex. Dominique Pizzie
-ex. @DomPizzie
-
-Version History
-0.2
-Various bug fixes and optimizations
-See commit change or See release history
-0.1
-Initial Release
-License
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-Acknowledgments
-Inspiration, code snippets, etc.
-
-awesome-readme
-PurpleBooth
-dbader
-zenorocha
-fvcproductions
+@pratikrawal333
+@ge26way
