@@ -1,18 +1,19 @@
 # Newton Raphson Solver (Group Z)
 Project : Newton-Raphson Solver
+[Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. Here, in this sprint we focus on solving polynomial equations by implementing the newton-raphson algorithm. 
 
-Simple overview of use/purpose : [Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. Here, in this sprint we focus on solving polynomial equations by implementing the newton-raphson algorithm. 
+**Description**
+Upon running the program, the user is asked to enter the following,
 
-Description
-Upon running the program, the user is asked to put the tolerance value : the minimum difference between two successive solutions, maximum number of iterations, so that the program doesn't run infinitely, and an initial guess solution.
-Then depending upon the number of terms of in the equation, the equation is generated. Now, the polySolve function uses the polyDiff function to generate the differentiated equation and uses both the equations alongwith the previous solution (for the first iteration, this value would be the user-specified guess solution). The solver computes the solution and compares it with the previous solution. When the difference between the two is less than the user-specified tolerance, the solver returns the latest solution as the final solution. 
+- The tolerance value : the minimum difference between two successive solutions.
+- Maximum number of iterations, so that the program doesn't run infinitely. 
+- An initial guess solution.
+Then depending upon the number of terms of in the equation, the equation is generated. Now, the _polySolve_ function uses the _polyDiff_ function to generate the differentiated equation and uses both the equations alongwith the previous solution (for the first iteration, this value would be the user-specified guess solution). The solver computes the solution and compares it with the previous solution. When the difference between the two is less than the user-specified tolerance, the solver returns the latest solution as the final solution. 
 
-Getting Started
+**Getting Started**
 Dependencies
 Basic C++ libraries
 Cmake 
-Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-ex. Windows 10
 Installing 
 Open a terminal in the build folder
 Type "cmake .."
