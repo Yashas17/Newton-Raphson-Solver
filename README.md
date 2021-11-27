@@ -1,5 +1,5 @@
 # Newton Raphson Solver (Group Z)
-Project : Newton-Raphson Solver
+**Project : Newton-Raphson Solver**
 [Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. Here, in this sprint we focus on solving polynomial equations by implementing the newton-raphson algorithm. 
 
 **Description**
@@ -60,13 +60,13 @@ The user can view his equation.
 
 `The polynomial is: 1x^2 + -1x^1 + -1x^0 `
 
-Now the _polySolve_ function will run. It will take the differentiated equation from _polyDiff_ and utilize both the equations and the preceding solution to generate the next solution as per this equation. 
+Now the _polySolve_ function will run. It will take the differentiated equation [f'(x)] from _polyDiff_ and the original equation [f(x)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
 
 ![alt text](https://web.mit.edu/10.001/Web/Course_Notes/NLAE/equation6.gif)
 
 It will continue to iterate until the maximum number of iterations is reached or the difference between two consecutive solutions falls below the user-specified tolerance. 
 
-After the iterations are complete, it will present the solution, res, and the actual number of iterations taken to reach said solution. 
+After the iterations are complete, it will present the _solution_, and the actual number of iterations taken, and the res to reach said solution. 
 
 `The solution is:1.61803`
 
