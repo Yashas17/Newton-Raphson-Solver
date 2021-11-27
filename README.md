@@ -8,19 +8,23 @@ Upon running the program, the user is asked to enter the following,
 - The tolerance value : the minimum difference between two successive solutions.
 - Maximum number of iterations, so that the program doesn't run infinitely. 
 - An initial guess solution.
+
 Then depending upon the number of terms of in the equation, the equation is generated. Now, the _polySolve_ function uses the _polyDiff_ function to generate the differentiated equation and uses both the equations alongwith the previous solution (for the first iteration, this value would be the user-specified guess solution). The solver computes the solution and compares it with the previous solution. When the difference between the two is less than the user-specified tolerance, the solver returns the latest solution as the final solution. 
 
-**Getting Started**
-Dependencies
-Basic C++ libraries
-Cmake 
-Installing 
-Open a terminal in the build folder
-Type "cmake .."
-Type "cmake --build ."
+**Dependencies:**
+
+- Basic C++ libraries
+- Cmake 
+
+**Installing **
+
+- Open a terminal in the build folder
+- Type "cmake .."
+- Type "cmake --build ."
+
 This will generate a Newton-Raphson Solver
-Executing program
-The first prompt will be to enter a tolerance value, here the user can enter the value as '1e-X' or '0.xxxx1' as per his/her convinience. For eg, for a the tolerance value - 0.0001, the user can enter 1e-4 or 0.0001.
+**Executing program:**
+The first prompt will be to enter a tolerance value, here the user can enter the value as '1e-X' or '0.xxxx1' as per his/her convinience. For eg, for a the tolerance value - '0.0001', the user can enter '1e-4' or '0.0001'.
 The next prompt is to enter the maximum the number of iterations allowed
 The next prompt is to enter a guess solution. Here the user can enter any numerical value.
 The next prompt is the number of terms in the equation. Here the user can enter any natural number.
