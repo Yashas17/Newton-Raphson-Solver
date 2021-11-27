@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 #include"functions.h"
-//
+
 int main()
 {
     int nt;    //number of terms in the equation seperated by addition
