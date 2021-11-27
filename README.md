@@ -25,6 +25,7 @@ Then depending upon the number of terms of in the equation, the equation is gene
 This will generate a Newton-Raphson Solver
 
 **Executing program:**
+
 The first prompt will be to enter a tolerance value, here the user can enter the value as '1e-X' or '0.xxxx1' as per his/her convinience. For eg, for a the tolerance value - '0.0001', the user can enter '1e-4' or '0.0001'.
 The next prompt is to enter the maximum the number of iterations allowed
 The next prompt is to enter a guess solution. Here the user can enter any numerical value.
@@ -41,4 +42,5 @@ Upon entering 'zero' as your guess solution or any value that makes the differen
 **Authors**
 
 @pratikrawal333
-@ge26way
+
+@00000000014ADF47
