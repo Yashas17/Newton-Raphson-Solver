@@ -27,7 +27,7 @@ void getEq(int &nt,double &x0,double &tol,int &miter,std::vector<std::vector<dou
         std::cin>>eq[i][1];
     }
 
-    std::cout<<"The polynomial is:";
+    std::cout<<"\nThe polynomial is:";
     for(auto i=0;i<nt;i++)
     {
         std::cout<<" "<<eq[i][1]<<"x^"<<eq[i][0]<<" ";
@@ -43,9 +43,12 @@ double f(double x,const std::vector<std::vector<double>>& eq)
 {
     double sum=0;
     for(auto i=0;i<eq.size();i++)
-    {
-        sum+=eq[i][1]*pow(x,eq[i][0]);
+    {   
+        if(eq[i][1]!=0) sum+=eq[i][1]*pow(x,eq[i][0]);
     }
+    auto y=sum;
+    if(y<0)y=-y;
+    if(y<1e-14) std::cout<<"\nWARNING!\nThe value of the differentiated function is close or equal to zero which can lead to large errors!\n";
     return sum;
 }
 
@@ -67,7 +70,10 @@ void polySolve(int nt, double x0, double tol, int miter, std::vector<std::vector
     auto ctr=0;
     do
     {   
-        double x=x0-f(x0,eq)/f(x0,eq1);
+        double x,g,g1;
+        g=f(x0,eq);
+        g1=f(x0,eq1);
+        x=x0-g/g1;
         res=x-x0;
         if(res<0)res=-res;
         x0=x;
@@ -78,5 +84,5 @@ void polySolve(int nt, double x0, double tol, int miter, std::vector<std::vector
             break;
         }
     }while(res>tol);
-    if(res<=tol)std::cout<<"\nThe solution is:"<<x0<<"\nThe number of iterations is:"<<ctr<<"\nResidual is:"<<res<<std::endl;
+    if(ctr<=miter)std::cout<<"\nThe solution is:"<<x0<<"\nThe number of iterations is:"<<ctr<<"\nResidual is:"<<res<<std::endl;
 }
