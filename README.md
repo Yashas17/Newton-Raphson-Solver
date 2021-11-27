@@ -45,10 +45,15 @@ The next prompt is the number of terms in the equation. Here the user can enter 
 Depending upon the number of terms, the user will be asked to enter the power and coefficient of each term. For eg. if the user wants to enter equation - 'x^2-x-1'. It will done as follows. 
 
 `Enter the power of term 1:      2`
+
 `Enter coefficient of term 1:    1`
+
 `Enter the power of term 2:      1`
+
 `Enter coefficient of term 2:    -1`
+
 `Enter the power of term 3:      0`
+
 `Enter coefficient of term 3:    -1`
 
 The user can view his equation.  
