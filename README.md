@@ -69,7 +69,9 @@ It will continue to iterate until the maximum number of iterations is reached or
 After the iterations are complete, it will present the solution, res, and the actual number of iterations taken to reach said solution. 
 
 `The solution is:1.61803`
+
 `The number of iterations is:5`
+
 `Residual is:4.59072e-007`
 
 
