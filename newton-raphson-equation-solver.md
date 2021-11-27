@@ -16,7 +16,7 @@ Implement a program for solving single variable polynomial equations. Define a f
 - The program can solve a single variable polynomial equation.
 - The program will take guess solution, tolerance and maximum number of iterations from user.
 - The solver prints or returns the root of the equation.
-- The project contains at least one unit test which compares one case with its analytic solution for correctness.
+- The project contains at least one unit test which compares one case with its analytical solution for correctness.
 
 ## Sprint 2
 Implement class `equation` to define original and differentiated equations. The program can handle complex polynomial, trigonometric, exponential and logarithmic functions. Use class hierarchies to define the different kinds of functions.
