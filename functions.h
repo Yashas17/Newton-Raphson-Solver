@@ -62,7 +62,7 @@ void polyDiff(const std::vector<std::vector<double>>& eq, std::vector<std::vecto
     }
 }
 
-void polySolve(int nt, double x0, double tol, int miter, std::vector<std::vector<double>> eq)
+double polySolve(int nt, double x0, double tol, int miter, std::vector<std::vector<double>> eq)
 {
     std::vector<std::vector<double>> eq1;
     polyDiff(eq,eq1);
@@ -85,4 +85,37 @@ void polySolve(int nt, double x0, double tol, int miter, std::vector<std::vector
         }
     }while(res>tol);
     if(ctr<=miter)std::cout<<"\nThe solution is:"<<x0<<"\nThe number of iterations is:"<<ctr<<"\nResidual is:"<<res<<std::endl;
+
+    return x0;
+}
+
+bool unit_test()
+{
+    int nt=3;
+    int x0=1.6;
+    double tol=1e-3;
+    int miter=10;
+    std::vector<std::vector<double>> eq;
+
+    eq.resize(nt,std::vector<double>(2,0));
+
+    eq[0][0]=2;
+    eq[0][1]=1;
+    eq[1][0]=1;
+    eq[1][1]=-1;
+    eq[2][0]=0;
+    eq[2][1]=-1;
+
+    x0=polySolve(nt,x0,tol,miter,eq);
+
+    double res=x0-1.61803;
+    if(res<0) res=-res;
+
+    if(res>1e-3) 
+    {
+        std::cout<<"The code is not working as expected.\n";
+        return false;
+    }
+
+    return true;
 }
