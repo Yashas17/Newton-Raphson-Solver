@@ -74,8 +74,7 @@ double polySolve(int nt, double x0, double tol, int miter, std::vector<std::vect
         g=f(x0,eq);
         g1=f(x0,eq1);
         x=x0-g/g1;
-        res=x-x0;
-        if(res<0)res=-res;
+        res=fabs(x-x0);
         x0=x;
         ctr++;
         if(ctr>miter)
@@ -89,10 +88,16 @@ double polySolve(int nt, double x0, double tol, int miter, std::vector<std::vect
     return x0;
 }
 
-bool unit_test()
-{
+bool polySolve_test()
+{   
+/*
+We test the working of function polySolve by comparing its solution for the equation x^2-x-1=0 with the analytical solution.
+The test equation has two roots: 1.61803 and -061803. We enter the guess solution close to 1.61803 to make the solver converge to that root.
+If the numerical solution is equal to the analytical solution, we conclude the solver works as expected. 
+We use tolerance of 1e-3 compare analytical and numerical solutions.
+*/
     int nt=3;
-    int x0=1.6;
+    double x0=1.6;
     double tol=1e-3;
     int miter=10;
     std::vector<std::vector<double>> eq;
@@ -106,16 +111,15 @@ bool unit_test()
     eq[2][0]=0;
     eq[2][1]=-1;
 
+    std::cout<<"Running Unit Test.\n";
+
     x0=polySolve(nt,x0,tol,miter,eq);
 
-    double res=x0-1.61803;
-    if(res<0) res=-res;
-
-    if(res>1e-3) 
+    if(fabs(x0-1.61803)>1e-3) 
     {
         std::cout<<"The code is not working as expected.\n";
-        return false;
+        return true;
     }
 
-    return true;
+    return false;
 }
