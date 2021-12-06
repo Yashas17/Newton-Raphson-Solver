@@ -5,7 +5,7 @@
 int main()
 {
     if(polySolve_test()) return 0;
-    std::cout<<"\nUnit test successful!\n";
+    std::cout<<"\nUnit test successful!\n\n";
 
     int nt;    //number of terms in the equation seperated by addition
     double x0;     //guess solution
