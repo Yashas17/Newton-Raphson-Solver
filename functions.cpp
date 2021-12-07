@@ -118,8 +118,8 @@ We use tolerance of 1e-3 compare analytical and numerical solutions.
     if(fabs(x0-1.61803)>1e-3) 
     {
         std::cout<<"The code is not working as expected.\n";
-        return true;
+        return false;
     }
 
-    return false;
+    return true;
 }
