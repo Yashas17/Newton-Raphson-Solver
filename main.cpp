@@ -7,11 +7,11 @@ int main()
     if(!polySolve_test()) return 1;
     std::cout<<"\nUnit test successful!\n\n";
 
-    int nt;                                 //number of terms in the equation seperated by addition
-    double x0;                              //guess solution
-    double tol;                             //tolerance
-    int miter;                              //maximum iterations
-    std::vector<std::vector<double>> eq;    //vector to store equation
+    int nt;                                 //Number of terms in the equation seperated by addition
+    double x0;                              //Guess solution
+    double tol;                             //Tolerance
+    int miter;                              //Maximum iterations
+    std::vector<std::vector<double>> eq;    //Vector to store equation
     getEq(nt,x0,tol,miter,eq);              //Get equation from user
     x0=polySolve(nt,x0,tol,miter,eq);       //Solve the equation
 }
