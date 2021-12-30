@@ -1,3 +1,4 @@
+#include "functions.h"
 #include <cmath>
 #include <iostream>
 #include <vector>
