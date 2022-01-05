@@ -1,3 +1,4 @@
+#include "equation.h"
 #include "functions.h"
 #include <iostream>
 #include <vector>
@@ -7,11 +8,9 @@ int main() {
     return 1;
   std::cout << "\nUnit test successful!\n\n";
 
-  int nt;     // Number of terms in the equation seperated by addition
-  double x0;  // Guess solution
-  double tol; // Tolerance
-  int miter;  // Maximum iterations
-  std::vector<std::vector<double>> eq;    // Vector to store equation
-  getEq(nt, x0, tol, miter, eq);          // Get equation from user
-  x0 = polySolve(nt, x0, tol, miter, eq); // Solve the equation
+  double x0 = getx0();           // Guess solution
+  double tol = getTol();         // Tolerance
+  int miter = getMiter();        // Maximum iterations
+  equation eq = getEq();         // Vector to store equation
+  x0 = eq.solve(x0, tol, miter); // Solve the equation
 }
