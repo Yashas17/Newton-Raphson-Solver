@@ -20,7 +20,7 @@ std::array<double, 2> equation::evaluate(double x) const {
     if (_p[i] != 0) {
       temp[0] += _c[i] * pow(x, _p[i]) * eval(_f[i], x);
     } else {
-      temp[0] += _c[i] * pow(x, _p[i]) * eval(_f[i], x);
+      temp[0] += _c[i] * eval(_f[i], x);
     }
   }
   temp[1] = 0;
