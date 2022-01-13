@@ -1,16 +1,16 @@
 #include "equation.h"
 #include "functions.h"
+#include "readData.cpp"
 #include <iostream>
 #include <vector>
 
 int main() {
-  if (!polySolve_test())
-    return 1;
-  std::cout << "\nUnit test successful!\n\n";
 
-  double x0 = getx0();           // Guess solution
-  double tol = getTol();         // Tolerance
-  int miter = getMiter();        // Maximum iterations
-  equation eq = getEq();         // Vector to store equation
+  double x0;                     // Guess solution
+  double tol;                    // Tolerance
+  int miter;                     // Maximum iterations
+  equation eq;                   // Vector to store equation
+  readData(x0, tol, miter, eq);  // Read Data
   x0 = eq.solve(x0, tol, miter); // Solve the equation
+  std::cout << x0;
 }
