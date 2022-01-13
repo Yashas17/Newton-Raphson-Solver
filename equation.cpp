@@ -3,6 +3,7 @@
 #include <array>
 #include <cmath>
 #include <iostream>
+#include <math.h>
 #include <memory>
 #include <vector>
 
@@ -11,7 +12,9 @@ equation::equation(const std::vector<double> &p, const std::vector<double> &c,
     : _p(p), _c(c), _f(f){};
 
 std::array<double, 2> equation::evaluate(double x) const {
-  std::array<double, 2> temp;
+  std::array<double, 2>
+      temp; // First element is value of original equation and second element is
+            // value of differentiated equation
   temp[0] = 0;
   for (auto i = 0; i < _p.size(); i++) {
     if (_p[i] != 0) {
@@ -49,15 +52,16 @@ double equation::solve(double x0, const double tol, const int miter) {
     if (ctr > miter) // Check if maximum number of iterations have been reached
     {
       std::cout << "\n Maximum number of iterations reached!\n"
-                << "x=" << x0 << "\nResidual=" << res << std::endl;
+                << "x= " << x0 << "\nResidual= " << res << std::endl;
       break;
     }
   } while (res > tol); // Iterate till the solution converges
 
   if (ctr <= miter)
-    std::cout << "\nThe solution is:" << x0
-              << "\nThe number of iterations is:" << ctr
-              << "\nResidual is:" << res << std::endl;
+    std::cout << "\nThe solution is: " << x0
+              << "\nThe number of iterations is: " << ctr
+              << "\nResidual is: " << res << std::endl
+              << std::endl;
 
   return x0;
 }
