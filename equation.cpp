@@ -14,14 +14,20 @@ std::array<double, 2> equation::evaluate(double x) const {
   std::array<double, 2> temp;
   temp[0] = 0;
   for (auto i = 0; i < _p.size(); i++) {
-    if (_c[i] != 0)
+    if (_p[i] != 0) {
       temp[0] += _c[i] * pow(x, _p[i]) * eval(_f[i], x);
+    } else {
+      temp[0] += _c[i] * pow(x, _p[i]) * eval(_f[i], x);
+    }
   }
   temp[1] = 0;
   for (auto i = 0; i < _p.size(); i++) {
-    if (_c[i] != 0)
-      temp[1] = _c[i] * pow(x, _p[i]) * evalDiff(_f[i], x) +
-                _c[i] * _p[i] * pow(x, _p[i] - 1) * eval(_f[i], x);
+    if (_p[i] != 0) {
+      temp[1] += _c[i] * pow(x, _p[i]) * evalDiff(_f[i], x) +
+                 _c[i] * _p[i] * pow(x, _p[i] - 1) * eval(_f[i], x);
+    } else {
+      temp[1] += _c[i] * evalDiff(_f[i], x);
+    }
   }
   if (fabs(temp[1]) < 1e-14)
     std::cout << "\nWARNING!\nThe value of the differentiated function is "
