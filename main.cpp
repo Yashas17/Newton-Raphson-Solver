@@ -12,5 +12,4 @@ int main() {
   equation eq;                   // Vector to store equation
   readData(x0, tol, miter, eq);  // Read Data
   x0 = eq.solve(x0, tol, miter); // Solve the equation
-  std::cout << x0;
 }
