@@ -39,9 +39,9 @@ The user can choose a 1-9 numbers for a special function or 0 for no function.
 
 ## Adding New Functionality
 
-The user can add extra special functions of their choice in the file `functions.cpp`. The user has to add the special function and its derivate in the methods `eval` and `evalDiff` respectively and assign a corresonpding number to it in the switch-case strutcture written in `eval` and `evalDiff` methods. The methods `eval` and `evalDiff` evaluate the function and its derivate respectively at a given point `x`. 
+The user can add extra special functions of their choice in the file _functions.cpp_. The user has to add the special function and its derivate in the methods _eval_ and _evalDiff_ respectively and assign a corresonpding number to it in the switch-case strutcture written in _eval_ and _evalDiff_ methods. The methods _eval_ and _evalDiff_ evaluate the function and its derivate respectively at a given point `x`. 
 
-The current program can only handle equations with terms of the form c*(x^n)*f(x), of which c, n and f(x) are defined as vectors `_c`, `_p` and `_f` in class `equation`. The class `equation` in file `equation.cpp` and `equation.h` and their methods can be modified to make the code more generic in future.
+The current program can only handle equations with terms of the form c*(x^n)*f(x), of which c, n and f(x) are defined as vectors `_c`, `_p` and `_f` in class _equation_. The class _equation_ in file _equation.cpp_ and _equation.h_ and their methods can be modified to make the code more generic in future.
 
 ## Example
 
@@ -50,15 +50,26 @@ We solve the polynomial equation `x^3*sin(x)-exp(x)` using the program. One of t
 The user can enter the required input parameters via the `data.json` file present in the example folder for this case. Here it should be noted that for a the tolerance value of `0.0001`, the user can enter either `1e-4` or `0.0001`. Following is the data entered,
 
 {
+
     "data": {
+
         "x0": -3,
+
         "tol": 1e-5,
+
         "miter": 600,
+
         "pw": [3,0],
+
         "cf": [ 1,-1],
+
         "fn": [ 1,9]
+
     }
+
 }
+
+Here the left-hand side is the _key_ used to identify the parameter _value_ on the right-hand side
 
 
 The program will then print the equation:
@@ -66,7 +77,7 @@ The program will then print the equation:
 `You have entered the following equation:`
 `1*x^3*sin(x)+-1*x^0*exp(x)`
 
-Now the _eq.solve_ function will run. It will take the value differentiated equation [f'(x)] at [x(n)] from _evalDiff_ and the value of the original equation [f(x)] at [x(n)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
+Now the _eq.solve_ function will run. It will take the value differentiated equation [f'(x)] at [x(n)] from _evalDiff_ and the value of the original equation [f(x)] from _eval_ at [x(n)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
 
 ![alt text](https://web.mit.edu/10.001/Web/Course_Notes/NLAE/equation6.gif)
 
