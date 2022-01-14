@@ -12,13 +12,14 @@ This will generate the executable file in the build folder named `newton-raphson
 
 ## Usage Guidelines
 
-Upon running the program, the user is asked to enter the following parameters:
-
-- The tolerance value
-- Maximum number of iterations 
-- A guess solution
-
-The program then gets the number of terms of the polynomial equation and the coeffients and powers of each term. The choice of guess solution is very important as it affects the convergence and also the result. The farther the guess solution is from root, the more number of iterations it will take to converge. In case the equtaion has multiple roots, the solver converges to the root nearest to the guess solution.
+The input parameters will be read from json configurational file "data.json". 
+To read the json file we use [nlohmann json library](https://github.com/nlohmann/json). This aids us in reading the key-value pairs which we then assign to our variables. This file holds the 
+- maximum number of iterations, `miter`, 
+- the guess solution, `x0`, 
+- tolerance, `tol`. 
+It also holds 3 vectors that hold the coefficients, `cf`, power, `pw`, and the function value, `fn` respectively.
+The function values holds an integer between 0 to 9, each of these integers corresponds to a specific trignometric, logarithmic, exponential function or no function at all, in which case it returns the value `1`.
+Should these vectors not be of the same size, the program will throw an error, prompting the user to ensure that the entered data is correct. Same has been done for the `miter` variable, prompting the user to enter a value greater than 0.
 
 **Important Note:** Sometimes the value of the differentiated function can become very small or zero, which can lead to huge error or `nan` (not a number) solution. In such cases, the program will throw a warning and user is should modify the guess solution to get more accurate results.
 
