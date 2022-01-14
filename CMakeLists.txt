@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 INCLUDE_DIRECTORIES(".")
 
-ADD_EXECUTABLE(newton-raphson main.cpp equation.cpp functions.cpp readData.cpp)
+ADD_EXECUTABLE(newton-raphson src/main.cpp src/equation.cpp src/functions.cpp src/readData.cpp)
