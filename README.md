@@ -45,53 +45,38 @@ The current program can only handle equations with terms of the form c*(x^n)*f(x
 
 ## Example
 
-We solve the polynomial equation `x^2-x-1` using the program. The equation has two roots `-0.61803` and `1.61803`. `1.61803` is known as [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio).
+We solve the polynomial equation `x^3*sin(x)-exp(x)` using the program. One of the root of the equation is `-3.1402`.
 
-The user will be first prompted to enter a tolerance value. Here, the user can enter the value as '1e-X' or '0.xxxx1' as per their convenience. For example, for a the tolerance value of `0.0001`, the user can enter either `1e-4` or `0.0001`. Following is the first prompt.
+The user can enter the required input parameters via the `data.json` file present in the example folder for this case. Here it should be noted that for a the tolerance value of `0.0001`, the user can enter either `1e-4` or `0.0001`. Following is the data entered,
 
-`Enter the tolerance:1e-4`
+{
+    "data": {
+        "x0": -3,
+        "tol": 1e-5,
+        "miter": 600,
+        "pw": [3,0],
+        "cf": [ 1,-1],
+        "fn": [ 1,9]
+    }
+}
 
-The next prompt is to enter the maximum the number of iterations allowed.
-
-`Enter maximum number of iterations:100`
-
-The next prompt is to enter a guess solution. Here the user can enter any numerical value.
-
-`Enter guess solution:1`
-
-The next prompt is the number of terms in the equation. Here the user can enter any positive number.
-
-`Enter the number of terms in the polynomial equation: 3`
-
-Depending upon the number of terms, the user will be asked to enter the power and coefficient of each term. For eg. if the user wants to enter equation - `x^2-x-1`, it will done as follows: 
-
-`Enter the power of term 1:      2`
-
-`Enter coefficient of term 1:    1`
-
-`Enter the power of term 2:      1`
-
-`Enter coefficient of term 2:    -1`
-
-`Enter the power of term 3:      0`
-
-`Enter coefficient of term 3:    -1`
 
 The program will then print the equation:
 
-`The polynomial is: 1x^2 + -1x^1 + -1x^0 `
+`You have entered the following equation:`
+`1*x^3*sin(x)+-1*x^0*exp(x)`
 
-Now the _polySolve_ function will run. It will take the differentiated equation [f'(x)] from _polyDiff_ and the original equation [f(x)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
+Now the _eq.solve_ function will run. It will take the value differentiated equation [f'(x)] at [x(n)] from _evalDiff_ and the value of the original equation [f(x)] at [x(n)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
 
 ![alt text](https://web.mit.edu/10.001/Web/Course_Notes/NLAE/equation6.gif)
 
 It will continue to iterate until the maximum number of iterations is reached or the difference between two consecutive solutions falls below the user-specified tolerance. After the iterations are complete, it will present the _solution_, the number of iterations, and the residual. 
 
-`The solution is:1.61803`
+`The solution is: -3.1402`
 
-`The number of iterations is:5`
+`The number of iterations is: 4`
 
-`Residual is:4.59072e-007`
+`Residual is: 2.81115e-07`
 
 ## Authors
 
