@@ -1,6 +1,6 @@
 # Newton Raphson Solver (Group Z)
 
-[Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. This program can solve single variable polynomial equations using Newton-Raphson method. 
+[Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. This program can solve single variable equations in which the terms seperated by addition/subtraction are of form c*(x^n)*f(x), where f(x)={sin(x), cos(x), tan(x), cot(x), sec(x), cosec(x), log(x), log10(x), exp(x)}and `c` and `n` are real numbers, using Newton-Raphson method. 
 
 ## Installation
 
@@ -12,21 +12,40 @@ This will generate the executable file in the build folder named `newton-raphson
 
 ## Usage Guidelines
 
-The input parameters will be read from json configurational file "data.json". 
-To read the json file we use [nlohmann json library](https://github.com/nlohmann/json). This aids us in reading the key-value pairs which we then assign to our variables. This file holds the 
-- maximum number of iterations, `miter`, 
-- the guess solution, `x0`, 
-- tolerance, `tol`. 
+The input parameters are read from json configurational file "data.json". This file should exist in the same folder as the executable file; which will be inside the build directory, if user follows the above mentioned installation procedure. To read the json file we use [nlohmann json library](https://github.com/nlohmann/json). This aids us in reading the key-value pairs which we then assign to our variables. This file holds the following data:
 
-It also holds 3 vectors that hold the coefficients, `cf`, power, `pw`, and the function value, `fn` respectively.
-The function values holds an integer between 0 to 9, each of these integers corresponds to a specific trignometric, logarithmic, exponential function or no function at all, in which case it returns the value `1`.
-Should these vectors not be of the same size, the program will throw an error, prompting the user to ensure that the entered data is correct. Same has been done for the `miter` variable, prompting the user to enter a value greater than 0.
+- maximum number of iterations, `miter`
+- the guess solution, `x0`
+- tolerance, `tol`
+- coefficient vector `cf`
+- power vector `pw`
+- special function vector `fn`
+
+Should the `cf`,`pw` and `fn` vectors not be of the same size, the program will throw an error, prompting the user to ensure that the entered data is correct. Same has been done for the `miter` variable, prompting the user to enter a value greater than 0. The vector `fn` takes inteegers from 0-9 corresonpding to a special fucntion each:
+- 0: none
+- 1: sin(x)
+- 2: cos(x)
+- 3: tan(x)
+- 4: cot(x)
+- 5: sec(x)
+- 6: cosec(x)
+- 7: log(x)
+- 8: log10(x)
+- 9: exp(x)
+
+The user can choose a 1-9 numbers for a special function or 0 for no function.
 
 **Important Note:** Sometimes the value of the differentiated function can become very small or zero, which can lead to huge error or `nan` (not a number) solution. In such cases, the program will throw a warning and user is should modify the guess solution to get more accurate results.
 
+## Adding New Functionality
+
+The user can add extra special functions of their choice in the file `functions.cpp`. The user has to add the special function and its derivate in the methods `eval` and `evalDiff` respectively and assign a corresonpding number to it in the switch-case strutcture written in `eval` and `evalDiff` methods. The methods `eval` and `evalDiff` evaluate the function and its derivate respectively at a given point `x`. 
+
+The current program can only handle equations with terms of the form c*(x^n)*f(x), of which c, n and f(x) are defined as vectors `_c`, `_p` and `_f` in class `equation`. The class `equation` in file `equation.cpp` and `equation.h` and their methods can be modified to make the code more generic in future.
+
 ## Example
 
-We solve the polynomial equation `x^2-x-1` using the program. The equation has two roots `-0.61803` and `1.61803`. `1.61803` is known as [Golden Ratio] (https://en.wikipedia.org/wiki/Golden_ratio).
+We solve the polynomial equation `x^2-x-1` using the program. The equation has two roots `-0.61803` and `1.61803`. `1.61803` is known as [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio).
 
 The user will be first prompted to enter a tolerance value. Here, the user can enter the value as '1e-X' or '0.xxxx1' as per their convenience. For example, for a the tolerance value of `0.0001`, the user can enter either `1e-4` or `0.0001`. Following is the first prompt.
 
