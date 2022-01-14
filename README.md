@@ -1,6 +1,6 @@
 # Newton Raphson Solver (Group Z)
 
-[Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. This program can solve single variable equations in which the terms seperated by addition/subtraction are of form c*(x^n)*f(x), where f(x)={sin(x), cos(x), tan(x), cot(x), sec(x), cosec(x), log(x), log10(x), exp(x)}and `c` and `n` are real numbers, using Newton-Raphson method. 
+[Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. This program can solve single variable equations in which the terms seperated by addition/subtraction are of form **c(x^n)f(x)**, where `f(x)={sin(x), cos(x), tan(x), cot(x), sec(x), cosec(x), log(x), log10(x), exp(x)}` and **c** and **n** are real numbers, using Newton-Raphson method. 
 
 ## Installation
 
