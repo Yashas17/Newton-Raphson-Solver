@@ -38,7 +38,7 @@ std::array<double, 2> equation::evaluate(double x) const {
   return temp;
 }
 
-double equation::solve(double x0, const double tol, const int miter) {
+void equation::solve(double x0, const double tol, const int miter) {
   double res;   // Residual to check for convergence
   auto ctr = 0; // Counter for number of iterations
   do {
@@ -62,6 +62,4 @@ double equation::solve(double x0, const double tol, const int miter) {
               << "\nThe number of iterations is: " << ctr
               << "\nResidual is: " << res << std::endl
               << std::endl;
-
-  return x0;
 }

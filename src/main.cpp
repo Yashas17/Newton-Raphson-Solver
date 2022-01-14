@@ -15,5 +15,5 @@ int main() {
   int miter;                     // Maximum iterations
   equation eq;                   // Vector to store equation
   readData(x0, tol, miter, eq);  // Read Data
-  x0 = eq.solve(x0, tol, miter); // Solve the equation
+  eq.solve(x0, tol, miter); // Solve the equation
 }

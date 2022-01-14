@@ -47,6 +47,7 @@ bool evalDiffTest() {
 }
 
 bool unitTest() {
+  std::cout<<"\n";
   if (evalTest() == 1 || evalDiffTest() == 1)
     return 1;
   return 0;

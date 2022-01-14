@@ -21,7 +21,7 @@ public:
   evaluate(double x) const; // Function to evaluate the equation
                             // and its derivative at given point
 
-  double solve(double x0, const double tol,
+  void solve(double x0, const double tol,
                const int miter); // Function to solve equation
 };
 
