@@ -1,6 +1,23 @@
 #include "include/functions.h"
 #include <cmath>
 
+/*
+eval() and evalDiff() methods return value of the special functions and thier
+derivate respectively at given x. The special functions are identified by the
+following numbers:
+
+0: none
+1: sin(x)
+2: cos(x)
+3: tan(x)
+4: cot(x)
+5: sec(x)
+6: cosec(x)
+7: log(x)
+8: log10(x)
+9: exp(x)
+*/
+
 double eval(const unsigned int f, const double x) {
   switch (f) {
   case 0:

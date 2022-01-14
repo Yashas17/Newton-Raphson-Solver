@@ -7,7 +7,8 @@
 
 constexpr double pi = 3.1415926535;
 
-bool evalTest() {
+bool evalTest() { // Function to test eval() function implemented in
+                  // functions.cpp
   double sol[10] = {
       1, sin(pi / 2.), cos(0.),   tan(0.), 1. / tan(pi / 2.), 1 / cos(pi),
       1, log(pi),      log10(pi), 1};
@@ -25,7 +26,8 @@ bool evalTest() {
   return 0;
 }
 
-bool evalDiffTest() {
+bool evalDiffTest() { // Function to test evalDiff() function implemented in
+                      // functions.cpp
   double solDiff[10] = {0.,
                         cos(pi),
                         -sin(pi / 2.),
@@ -49,7 +51,8 @@ bool evalDiffTest() {
   return 0;
 }
 
-bool evaluateTest() {
+bool evaluateTest() { // Function to test evaluate() function implemented in
+                      // equations.cpp
   std::vector<double> c = {1., -2};
   std::vector<double> p = {2., 0.};
   std::vector<unsigned int> f = {1, 7};
@@ -62,7 +65,7 @@ bool evaluateTest() {
     std::cout << "Check evaluate()";
     return 1;
   }
-  std::cout<<"evaluate() working as expected.\n";
+  std::cout << "evaluate() working as expected.\n";
   return 0;
 }
 

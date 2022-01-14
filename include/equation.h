@@ -2,8 +2,7 @@
 #define EQUATION_H
 
 #include "functions.h"
-#include <iostream>
-#include <memory>
+#include <array>
 #include <vector>
 
 class equation {
@@ -22,7 +21,7 @@ public:
                             // and its derivative at given point
 
   void solve(double x0, const double tol,
-               const int miter); // Function to solve equation
+             const int miter); // Function to solve equation
 };
 
 #endif

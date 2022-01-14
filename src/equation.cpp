@@ -1,31 +1,31 @@
 #include "include/equation.h"
-
 #include <array>
 #include <cmath>
 #include <iostream>
-#include <math.h>
-#include <memory>
 #include <vector>
 
 equation::equation(const std::vector<double> &p, const std::vector<double> &c,
                    const std::vector<unsigned int> &f)
-    : _p(p), _c(c), _f(f){};
+    : _p(p), _c(c), _f(f){}; // Constructor for class equation
 
-std::array<double, 2> equation::evaluate(double x) const {
-  std::array<double, 2>
-      temp; // First element is value of original equation and second element is
-            // value of differentiated equation
-  temp[0] = 0;
+std::array<double, 2> equation::evaluate(
+    double x) const { // Function to evaluate value of the equation and its
+                      // derivative at given point x
+  std::array<double, 2> temp; // Temporary vector to store the value of equation
+                              // and its derivate at x
+  temp[0] = 0; // First element stores the value of original equation
   for (auto i = 0; i < _p.size(); i++) {
-    if (_p[i] != 0) {
+    if (_p[i] != 0) { // Power zero sometimes creates errors thus handling the
+                      // case manually
       temp[0] += _c[i] * pow(x, _p[i]) * eval(_f[i], x);
     } else {
       temp[0] += _c[i] * eval(_f[i], x);
     }
   }
-  temp[1] = 0;
+  temp[1] = 0; // Second element stores the value of derivative of equation
   for (auto i = 0; i < _p.size(); i++) {
-    if (_p[i] != 0) {
+    if (_p[i] != 0) { // For power zero, x does not exist in the equation
+                      // technically and thus this case is treated seperately
       temp[1] += _c[i] * pow(x, _p[i]) * evalDiff(_f[i], x) +
                  _c[i] * _p[i] * pow(x, _p[i] - 1) * eval(_f[i], x);
     } else {
@@ -38,9 +38,11 @@ std::array<double, 2> equation::evaluate(double x) const {
   return temp;
 }
 
-void equation::solve(double x0, const double tol, const int miter) {
-  double res;   // Residual to check for convergence
-  auto ctr = 0; // Counter for number of iterations
+void equation::solve(double x0, const double tol,
+                     const int miter) { // Function to solve the given equation
+                                        // using Newton-Raphson method
+  double res;                           // Residual to check for convergence
+  auto ctr = 0;                         // Counter for number of iterations
   do {
     double x;
     std::array<double, 2> f = evaluate(x0);
