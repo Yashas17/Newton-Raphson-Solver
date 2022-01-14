@@ -1,4 +1,5 @@
 #include "include/readData.h"
+#include <cassert>
 
 void readData(double &x0, double &tol, int &miter, equation &eq) {
 
@@ -18,6 +19,7 @@ void readData(double &x0, double &tol, int &miter, equation &eq) {
   miter = data["data"]["miter"];
 
   assert(miter > 0);
+  assert(tol>0);
 
   for (auto a = 0; a < data["data"]["pw"].size(); a++) {
     p.push_back(data["data"]["pw"][a]);
