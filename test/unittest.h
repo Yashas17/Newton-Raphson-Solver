@@ -1,6 +1,9 @@
+#include "include/equation.h"
 #include "include/functions.h"
+#include <array>
 #include <cmath>
 #include <iostream>
+#include <vector>
 
 constexpr double pi = 3.1415926535;
 
@@ -46,9 +49,26 @@ bool evalDiffTest() {
   return 0;
 }
 
+bool evaluateTest() {
+  std::vector<double> c = {1., -2};
+  std::vector<double> p = {2., 0.};
+  std::vector<unsigned int> f = {1, 7};
+  equation eq(p, c, f);
+  double x = 0.5;
+  std::array<double, 2> a = eq.evaluate(x);
+  double x1 = pow(x, 2.) * sin(x) - 2 * log(x);
+  double x2 = pow(x, 2.) * cos(x) - 2 * x * sin(x) - 2. / x;
+  if (fabs(a[0] - x1) > 1e-4 || fabs(a[0] - x1) > 1e-4) {
+    std::cout << "Check evaluate()";
+    return 1;
+  }
+  std::cout<<"evaluate() working as expected."
+  return 0;
+}
+
 bool unitTest() {
-  std::cout<<"\n";
-  if (evalTest() == 1 || evalDiffTest() == 1)
+  std::cout << "\n";
+  if (evalTest() == 1 || evalDiffTest() == 1 || evaluateTest() == 1)
     return 1;
   return 0;
 }
