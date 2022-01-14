@@ -47,7 +47,7 @@ The current program can only handle equations with terms of the form c*(x^n)*f(x
 
 We solve the polynomial equation `x^3*sin(x)-exp(x)` using the program. One of the root of the equation is `-3.1402`.
 
-The user can enter the required input parameters via the `data.json` file present in the example folder for this case. Here it should be noted that for a the tolerance value of `0.0001`, the user can enter either `1e-4` or `0.0001`. Following is the data entered,
+The user can enter the required input parameters via the `data.json` file present in the example folder for this case. Here it should be noted that for a the tolerance value of `0.0001`, the user can enter either `1e-4` or `0.0001`. Following is the data entered:
 
 {
 
@@ -78,7 +78,7 @@ The program will then print the equation:
 
 `1*x^3*sin(x)+-1*x^0*exp(x)`
 
-Now the _eq.solve_ function will run. It will take the value differentiated equation [f'(x)] at [x(n)] from _evalDiff_ and the value of the original equation [f(x)] from _eval_ at [x(n)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
+Now the _eq.solve()_ function will run. It takes keeps updating the solution using the following equation: 
 
 ![alt text](https://web.mit.edu/10.001/Web/Course_Notes/NLAE/equation6.gif)
 
