@@ -75,6 +75,7 @@ Here the left-hand side is the _key_ used to identify the parameter _value_ on t
 The program will then print the equation:
 
 `You have entered the following equation:`
+
 `1*x^3*sin(x)+-1*x^0*exp(x)`
 
 Now the _eq.solve_ function will run. It will take the value differentiated equation [f'(x)] at [x(n)] from _evalDiff_ and the value of the original equation [f(x)] from _eval_ at [x(n)] and utilize both the equations and the latest solution [x(n)] to generate the next solution [x(n+1)] as per this equation. 
