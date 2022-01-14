@@ -17,6 +17,7 @@ To read the json file we use [nlohmann json library](https://github.com/nlohmann
 - maximum number of iterations, `miter`, 
 - the guess solution, `x0`, 
 - tolerance, `tol`. 
+
 It also holds 3 vectors that hold the coefficients, `cf`, power, `pw`, and the function value, `fn` respectively.
 The function values holds an integer between 0 to 9, each of these integers corresponds to a specific trignometric, logarithmic, exponential function or no function at all, in which case it returns the value `1`.
 Should these vectors not be of the same size, the program will throw an error, prompting the user to ensure that the entered data is correct. Same has been done for the `miter` variable, prompting the user to enter a value greater than 0.
