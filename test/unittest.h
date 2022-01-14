@@ -62,7 +62,7 @@ bool evaluateTest() {
     std::cout << "Check evaluate()";
     return 1;
   }
-  std::cout<<"evaluate() working as expected."
+  std::cout<<"evaluate() working as expected.\n";
   return 0;
 }
 

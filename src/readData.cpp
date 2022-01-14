@@ -34,9 +34,6 @@ void readData(double &x0, double &tol, int &miter, equation &eq) {
   std::cout<<"\nYou have entered the following equation:\n";
   for (auto a = 0; a < data["data"]["pw"].size(); a++) {
     std::cout << data["data"]["cf"][a] << "*x^" <<data["data"]["pw"][a]<<"*"<< functions[data["data"]["fn"][a]];
-   /* if (data["data"]["fn"][a] > 0) {
-      std::cout << "(x)";
-    }*/
     if (a < data["data"]["pw"].size() - 1) {
       std::cout << "+";
     }
