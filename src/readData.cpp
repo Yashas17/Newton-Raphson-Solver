@@ -15,30 +15,31 @@ void readData(double &x0, double &tol, int &miter, equation &eq) {
   nlohmann::json data;
   data_file >> data; // Reading data from the file
 
-  assert((data["data"]["pw"].size() == data["data"]["cf"].size()) &&
-         (data["data"]["cf"].size() ==
-          data["data"]["fn"].size())); // Ensuring that power, coefficient and
-                                       // function vectors are of same size
+  assert((data["data"]["power"].size() == data["data"]["coefficient"].size()) &&
+         (data["data"]["coefficient"].size() ==
+          data["data"]["function"]
+              .size())); // Ensuring that power, coefficient and
+                         // function vectors are of same size
 
-  x0 = data["data"]["x0"];
-  tol = data["data"]["tol"];
-  miter = data["data"]["miter"];
+  x0 = data["data"]["guess solution"];
+  tol = data["data"]["tolerance"];
+  miter = data["data"]["max iterations"];
 
   assert(miter > 0);
   assert(tol > 0);
 
-  std::cout << "\nx0 = " << x0 << "\nmiter = " << miter << "\ntol = " << tol
+  std::cout << "\nGuess Solution = " << x0 << "\nMax Iterations = " << miter << "\nTolerance = " << tol
             << std::endl; // Printing x0, miter and tol on console
 
-  for (auto a = 0; a < data["data"]["pw"].size();
+  for (auto a = 0; a < data["data"]["power"].size();
        a++) { // Constructing the three vectors for equation
-    p.push_back(data["data"]["pw"][a]);
-    c.push_back(data["data"]["cf"][a]);
+    p.push_back(data["data"]["power"][a]);
+    c.push_back(data["data"]["coefficient"][a]);
 
-    assert(data["data"]["fn"][a] >= 0 &&
-           data["data"]["fn"][a] <=
+    assert(data["data"]["function"][a] >= 0 &&
+           data["data"]["function"][a] <=
                9); // Ensuring the function value is within the bounds
-    f.push_back(data["data"]["fn"][a]);
+    f.push_back(data["data"]["function"][a]);
   }
   eq = equation(p, c, f); // Initializing the equation with given vectors
 
@@ -50,12 +51,13 @@ void readData(double &x0, double &tol, int &miter, equation &eq) {
                                                    // read from data
 
   std::cout << "\nYou have entered the following equation:\n";
-  for (auto a = 0; a < data["data"]["pw"].size();
+  for (auto a = 0; a < data["data"]["power"].size();
        a++) { // Printing the equation read from data file
 
-    std::cout << data["data"]["cf"][a] << "*x^" << data["data"]["pw"][a] << "*"
-              << functions[data["data"]["fn"][a]];
-    if (a < data["data"]["pw"].size() - 1)
+    std::cout << data["data"]["coefficient"][a] << "*x^"
+              << data["data"]["power"][a] << "*"
+              << functions[data["data"]["function"][a]];
+    if (a < data["data"]["power"].size() - 1)
       std::cout << "+";
   }
   std::cout << "\n";

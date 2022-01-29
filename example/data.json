@@ -1,10 +1,10 @@
 {
     "data": {
-        "x0": -3,
-        "tol": 1e-5,
-        "miter": 600,
-        "pw": [3,0],
-        "cf": [ 1,-1],
-        "fn": [ 1,9]
+        "guess solution": -3,
+        "tolerance": 1e-5,
+        "max iterations": 600,
+        "power": [3,0],
+        "coefficient": [ 1,-1],
+        "function": [ 1,9]
     }
 }
