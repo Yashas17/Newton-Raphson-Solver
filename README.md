@@ -38,10 +38,6 @@ The user can choose a 1-9 numbers for a special function or 0 for no function. T
 
 **Important Note:** Sometimes the value of the differentiated function can become very small or zero, which can lead to huge error or `nan` (not a number) solution. In such cases, the program will throw a warning and user is should modify the guess solution to get more accurate results.
 
-## Adding New Functionality
-
-The user can add extra special functions of their choice in the file _functions.cpp_. The user has to add the special function and its derivate in the methods _eval_ and _evalDiff_ respectively and assign a corresonpding number to it in the switch-case structure written in _eval_ and _evalDiff_ methods. The methods _eval_ and _evalDiff_ evaluate the value of the function and its derivate respectively at a given point `x`. The user also has to modify the range of values user can pass in `function` in the readData.cpp file from 0-9 to the modified value in the `assert()` method used to check correct input.
-
 ## Example
 
 We solve the polynomial equation `x^3*sin(x)-exp(x)` using the program. One of the root of the equation is `-3.1402`.
@@ -96,6 +92,10 @@ The vector _temp_ from _equation.cpp_ stores the value of the function and value
 `The number of iterations is: 4`
 
 `Residual is: 2.81115e-07`
+
+## Adding New Functionality
+
+The user can add new special functions as required in the file _functions.cpp_. The user has to add the special function and its derivate in the methods _eval_ and _evalDiff_ respectively and assign a corresonpding number to it in the switch-case structure written in _eval_ and _evalDiff_ methods. The methods _eval_ and _evalDiff_ evaluate the value of the function and its derivate respectively at a given point `x`. The user also has to modify the range of values user can pass in `function` in the readData.cpp file from 0-9 to the modified value in the `assert()` method used to check correct input.
 
 ## Authors
 
