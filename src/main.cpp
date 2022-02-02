@@ -1,6 +1,8 @@
 #include "include/equation.h"
 #include "include/functions.h"
 #include "include/readData.h"
+#include <fstream>
+#include <ios>
 #include <iostream>
 #include <vector>
 

@@ -58,7 +58,8 @@ bool evaluateTest() { // Function to test evaluate() function implemented in
   std::vector<unsigned int> f = {1, 7};
   equation eq(p, c, f);
   double x = 0.5;
-  std::array<double, 2> a = eq.evaluate(x);
+  std::array<double, 2> a;
+  eq.evaluate(a,x);
   double x1 = pow(x, 2.) * sin(x) - 2 * log(x);
   double x2 = pow(x, 2.) * cos(x) - 2 * x * sin(x) - 2. / x;
   if (fabs(a[0] - x1) > 1e-4 || fabs(a[0] - x1) > 1e-4) {
