@@ -4,14 +4,20 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-
+/*
+This file holds the unit tests functions that check whether the functions and differentiated functions are operating appropriately.
+*/
 constexpr double pi = 3.1415926535;
 
-bool evalTest() { // Function to test eval() function implemented in
-                  // functions.cpp
+// Function to test the functions 
+
+bool evalTest() { 
+
   double sol[10] = {
       1, sin(pi / 2.), cos(0.),   tan(0.), 1. / tan(pi / 2.), 1 / cos(pi),
       1, log(pi),      log10(pi), 1};
+
+// Each function has its own x value for mathematical convienience 
 
   double testx[10] = {
       1., pi / 2, 0., 0., pi / 2., pi, pi / 2., pi, pi, 0.,
@@ -26,8 +32,10 @@ bool evalTest() { // Function to test eval() function implemented in
   return 0;
 }
 
-bool evalDiffTest() { // Function to test evalDiff() function implemented in
-                      // functions.cpp
+// Function to test the differentiated functions
+
+bool evalDiffTest() { 
+
   double solDiff[10] = {0.,
                         cos(pi),
                         -sin(pi / 2.),
@@ -51,8 +59,10 @@ bool evalDiffTest() { // Function to test evalDiff() function implemented in
   return 0;
 }
 
-bool evaluateTest() { // Function to test evaluate() function implemented in
-                      // equations.cpp
+// Function to test evaluate() function implemented in equations.cpp
+
+bool evaluateTest() { 
+
   std::vector<double> c = {1., -2};
   std::vector<double> p = {2., 0.};
   std::vector<unsigned int> f = {1, 7};
