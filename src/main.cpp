@@ -12,5 +12,5 @@ int main() {
   int miter;                    // Maximum iterations
   equation eq;                  // Vector to store equation
   readData(x0, tol, miter, eq); // Calling the function to read data from json file and store it in the corresponding variables
-  eq.solve(x0, tol, miter);     // SCalling the function to solve the function and print the results
+  eq.solve(x0, tol, miter);     // Calling the function to solve the function and print the results
 }
