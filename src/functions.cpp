@@ -16,6 +16,8 @@ following numbers:
 7: log(x)
 8: log10(x)
 9: exp(x)
+
+In the future, the user can add his/her own functions and their derivatives in the respective lists and extend functionality, provided the corresponding assert statements are also changed.
 */
 
 double eval(const unsigned int f, const double x) {
