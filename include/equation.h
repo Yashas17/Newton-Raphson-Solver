@@ -4,6 +4,9 @@
 #include "functions.h"
 #include <array>
 #include <vector>
+/**
+Here we define the class that is responsible for building the equations
+**/
 
 class equation {
 private:
