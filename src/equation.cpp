@@ -5,25 +5,27 @@
 #include <vector>
 
 /**
-This function evaluates the value of equation and its derivative at a particular instance of x
-These values are stored in corresponding elements of 'temp'
-We also check whether the value of differentiated function is too close to zero, which is a limitation of
-the Newton-Raphson algorithm and can lead to large errors.
+Constructor for class equation
 **/
-
 equation::equation(const std::vector<double> &p, const std::vector<double> &c,
                    const std::vector<unsigned int> &f)
-    : _p(p), _c(c), _f(f){};                    // Constructor for class equation
+                   : _p(p), _c(c), _f(f){};
 
+/**
+This function evaluates the value of equation and its derivative at a particular instance of x
+These values are stored in corresponding elements of 'temp'. We also check whether the value of 
+differentiated function is too close to zero, which is a limitation of the Newton-Raphson 
+algorithm and can lead to large errors.
+**/
 void equation::evaluate(
     std::array<double, 2> &temp,
     double x) const { 
 
-  temp[0] = 0;                                  // First element stores the value of original equation
-  temp[1] = 0;                                  // Second element stores the value of derivative of equation
+  temp[0] = 0;                                  // First element stores the value of original equation at x
+  temp[1] = 0;                                  // Second element stores the value of derivative of equation at x
 
 /**
-We follow basic u.v rule of differentiation and calculate the value at a particular x
+We follow the chain rule of differentiation to calculate value of derivative of equation at a particular x
 **/
   for (auto i = 0; i < _p.size(); i++) {
     if (_p[i] != 0) {                           // Power zero sometimes creates errors thus handling the
@@ -42,7 +44,9 @@ We follow basic u.v rule of differentiation and calculate the value at a particu
   }
 }
 /**
-This function carries out the actual Newton-Raphson algorithm to generate the solution. If the iterations exceed the maximum number of iterations allowed or the residuals falls below the tolerance value, the solution, number of iterations and residual is printed.
+This function carries out the actual Newton-Raphson algorithm to generate the solution. 
+If the iterations exceed the maximum number of iterations allowed or the residuals falls below 
+the tolerance value, the solution, number of iterations and residual is printed.
 **/
 void equation::solve(double x0, const double tol,
                      const int miter) { 
