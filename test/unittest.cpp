@@ -4,12 +4,12 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-/*
-This file holds the unit tests functions that check whether the functions and differentiated functions are operating appropriately.
-*/
+/**
+This file holds the unit tests for various functions
+**/
 constexpr double pi = 3.1415926535;
 
-// Function to test the functions 
+// Function to test eval() function implemented in functions.cpp
 
 bool evalTest() { 
 
@@ -32,7 +32,7 @@ bool evalTest() {
   return 0;
 }
 
-// Function to test the differentiated functions
+// Function to test the evalDiff() function implemented in functions.cpp
 
 bool evalDiffTest() { 
 
