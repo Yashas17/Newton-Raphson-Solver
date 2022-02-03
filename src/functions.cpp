@@ -1,7 +1,7 @@
 #include "include/functions.h"
 #include <cmath>
 
-/*
+/**
 eval() and evalDiff() methods return value of the special functions and thier
 derivate respectively at given x. The special functions are identified by the
 following numbers:
@@ -17,9 +17,9 @@ following numbers:
 8: log10(x)
 9: exp(x)
 
-In the future, the user can add his/her own functions and their derivatives in the respective lists and extend functionality
-provided the corresponding assert statements are also changed.
-*/
+In the future, the user can add thier own functions and their derivatives in the respective lists and extend functionality
+provided the assert statement in readData.cpp is also changed.
+**/
 
 double eval(const unsigned int f, const double x) {
   switch (f) {
