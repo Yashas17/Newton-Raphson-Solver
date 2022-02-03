@@ -1,7 +1,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-/**These are the functions responsible for returning the value of the actual
-** function and the differentiated function at any particular value of x
+/**These are the functions responsible for returning the value of the special
+** function and its derivative at any particular value of x
 **/
 
 double eval(const unsigned int f,
