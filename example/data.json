@@ -1,0 +1,10 @@
+{
+    "data": {
+        "guess solution": -3,
+        "tolerance": 1e-5,
+        "max iterations": 600,
+        "power": [3,0],
+        "coefficient": [ 1,-1],
+        "function": [ 1,9]
+    }
+}
