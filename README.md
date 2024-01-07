@@ -1,4 +1,4 @@
-# Newton Raphson Solver (Group Z)
+# Newton Raphson Solver
 
 [Newton-Raphson](https://en.wikipedia.org/wiki/Newton%27s_method) is a numerical method for solving equations. This program can solve single variable equations in which the terms seperated by addition/subtraction are of form **c(x^n)f(x)**, where `f(x)={sin(x), cos(x), tan(x), cot(x), sec(x), cosec(x), log(x), log10(x), exp(x)}` and **c** and **n** are real numbers, using Newton-Raphson method. 
 
@@ -96,9 +96,3 @@ The vector _temp_ from _equation.cpp_ stores the value of the function and value
 ## Adding New Functionality
 
 The user can add new special functions as required in the file _functions.cpp_. The user has to add the special function and its derivate in the methods _eval_ and _evalDiff_ respectively and assign a corresonpding number to it in the switch-case structure written in _eval_ and _evalDiff_ methods. The methods _eval_ and _evalDiff_ evaluate the value of the function and its derivate respectively at a given point `x`. The user also has to modify the range of values user can pass in `function` in the readData.cpp file from 0-9 to the modified value in the `assert()` method used to check correct input.
-
-## Authors
-
-@pratikrawal333
-
-@yashas_gandhi
